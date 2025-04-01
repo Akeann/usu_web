@@ -1,0 +1,52 @@
+{% extends 'base.html' %}  <!-- Расширяем базовый шаблон -->
+{% load static %}
+
+{% block title %}Metabarcoding Data Analysis{% endblock %}  <!-- Заголовок страницы -->
+
+{% block content %}  <!-- Блок для уникального контента страницы -->
+<div class="container">
+    <div class="welcome-section">
+        <h1 class="heading-highlight">Welcome to Metabarcoding Data Analysis</h1>
+        <p class="fungi-metabarcoding-style">
+            This platform provides a free and user-friendly web server for QIIME2-based metabarcoding analysis using Illumina and Nanopore sequencing technologies. Whether you're a researcher, student, or educator, our tools are designed to help you analyze and classify your sequencing data efficiently.
+        </p>
+        <div class="flex-start-aligned-with-text-gap">
+            <p class="text-block highlighted-text">
+                <span>Click to </span>
+                <span class="text-block highlighted-text">start</span>
+                <span> using our web server for</span>
+            </p>
+            <!-- Кнопка Illumina -->
+            <a href="{% url 'illumina' %}" class="custom-button">Illumina</a>
+            <p class="text-block">or</p>
+            <!-- Кнопка Nanopore -->
+            <a href="{% url 'nanopore' %}" class="custom-button">Nanopore</a>
+        </div>
+    </div>
+
+    <div class="introductory-section">
+        <h2 class="introductory-text-styles">Getting Started</h2>
+        <div class="content-box">
+            <div class="content-container">
+                <ul class="pipeline-list-style">
+                    <li>
+                        <span>Try the </span>
+                        <a href="https://comingsoon" class="link-text-visual-style">introduction tutorial</a>
+                        <span> to learn how to use our platform.</span>
+                    </li>
+                    <li>
+                        <span>Explore the </span>
+                        <a href="#" class="link-text-visual-style">documentation</a>
+                        <span> for detailed guides and explanations.</span>
+                    </li>
+                    <li>
+                        <span>Visit our </span>
+                        <a href="https://github.com" class="link-text-visual-style">GitHub</a>
+                        <span> repository to access the source code and contribute.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

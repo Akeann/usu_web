@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metabarcoding Data Analysis</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header class="navigation-panel">
+        <div class="logo-and-title">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo" />
+                </a>
+            </div>
+            <div class="site-title">
+                <a href="{% url 'home' %}">
+                    <span>Metabarcoding Data Analysis and Classification</span>
+                </a>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <div class="dropdown">
+                <a href="#" class="dropbtn">web server</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'illumina' %}">Illumina</a>
+                    <a href="{% url 'nanopore' %}">Nanopore</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">documents</a>
+                <div class="dropdown-content">
+                    <a href="#">article</a>
+                    <a href="#">github</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">profile</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'registration' %}">registration</a>
+                    <a href="#" id="loginBtn">login</a>
+                    <a href="#" id="logoutBtn">logout</a>
+                </div>
+            </div>
+            <a href="#">contacts</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Контент страницы -->
+        {% endblock %}
+    </main>
+
+    <!-- Подключаем глобальный JavaScript -->
+    <script src="{% static 'js/global.js' %}"></script>
+</body>
+</html>
